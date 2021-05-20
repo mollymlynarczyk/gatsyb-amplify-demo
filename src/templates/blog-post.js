@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { withAuthenticator } from "aws-amplify-react"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -65,7 +64,7 @@ const BlogPostTemplate = ({ data, location }) => {
   )
 }
 
-export default withAuthenticator(BlogPostTemplate)
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
