@@ -1,7 +1,7 @@
 {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "gatsybaff5727e",
+    "resourceNameTruncated": "gatsyb735c804f",
     "userPoolName": "gatsybamplifydemo",
     "autoVerifiedAttributes": [
         "email"
@@ -23,16 +23,15 @@
         "Requires Uppercase"
     ],
     "requiredAttributes": [
-        "preferred_username",
-        "name"
+        "preferred_username"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "gatsybaff5727e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "gatsyb735c804f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "aff5727e",
+    "sharedId": "735c804f",
     "resourceName": "gatsybamplifydemo",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {

@@ -1,0 +1,6 @@
+type Blog @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  date: AWSDate!
+  title: String!
+  content: String!
+}
