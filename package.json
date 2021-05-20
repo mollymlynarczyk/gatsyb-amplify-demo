@@ -8,6 +8,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "aws-amplify": "^4.0.2",
+    "aws-amplify-react": "^5.0.0",
     "gatsby": "^3.4.1",
     "gatsby-plugin-feed": "^3.4.0",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
