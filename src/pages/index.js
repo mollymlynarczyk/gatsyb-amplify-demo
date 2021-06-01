@@ -5,9 +5,27 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator, AmplifySignOut }from '@aws-amplify/ui-react'
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+
+  Amplify.configure({
+    Auth: {
+      region: "us-east-1",
+      userPoolId: "us-east-1_iLsgGwPDz",
+      userPoolWebClientId: "cf4flbb7qit1h79dlfkbce15j",
+      oauth: {
+        domain: "https://gatsyb-amplify-demo.auth.us-east-1.amazoncognito.com", 
+        scope: ["email", "openid", "aws.cognito.signin.user.admin", "profile"],
+        redirectSignIn: "https://main.d1wjnn0jkrvhqi.amplifyapp.com/",
+        redirectSignOut: "https://main.d1wjnn0jkrvhqi.amplifyapp.com/",
+        responseType: "code"
+      }
+    },
+  });
 
   if (posts.length === 0) {
     return (
@@ -63,7 +81,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default withAuthenticator(BlogIndex);
 
 export const pageQuery = graphql`
   query {
